@@ -42,7 +42,7 @@
     <div class="container">
         <div class="btn">
             <p contenteditable="true">Hex-color code is :</p>
-            <p id="hexCode"><i>#00000</i></p>
+            <p id="hexCode"><i></i></p>
             <button onclick="GenerateColor()">Generate Color</button>
         </div>
     </div>
@@ -54,7 +54,10 @@
                 randomColor = Math.floor(Math.random()*16);
                 hexCode += Color[randomColor]
             }
-            document.getElementById("hexCode").innerHTML = `# ${hexCode}`;
+            document.getElementById("hexCode").innerHTML = `#${hexCode}`;
+            window.addEventListener("load", hexCode);
+            
+            
             document.getElementsByTagName("body")[0].style.background = "#" + hexCode;
         }
 
